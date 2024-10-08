@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPRAS EN OFERTA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://img.freepik.com/psd-premium/etiqueta-roja-super-oferta_658787-247.jpg" alt="COMPRAS EN OFERTA">
+        </div>
+        <nav>
+            <h1>COMPRAS EN OFERTA</h1>
+            <a href="#home">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#carrito"
+            <a href="#carrito">
+                <img src="https://cdn-icons-png.flaticon.com/512/8146/8146003.png" alt="Carrito de compras" class="icono-carrito">
+                <span id="cart-count">0</span> Carrito de Compras
+            </a>
+        </nav>
+    </header>
+
+    <main>
+       <section id="video">
+         <h2>Video del Producto</h2>
+         <video controls autoplay muted width="320">
+            <source src="https://goods-vod.kwcdn.com/goods-video/dbca76370159cd69d53a851b77ef19d26120456b.f30.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        <p>Audífonos inalámbricos transparentes TWS con pantalla de potencia LED, auriculares in-ear deportivos con control de volumen, compatibles con teléfonos inteligentes para juegos y música, micrófono de condensador, batería recargable de 150mAh - Regalo ideal</p>
+      </section>
+
+        <section id="home">
+            <h2>Bienvenido a COMPRAS EN OFERTA</h2>
+            <p>Tu tienda de dispositivos de audio con los mejores precios del mercado.</p>
+        </section>
+
+        <section id="productos">
+            <h2>Productos</h2>
+            <div class="productos-container">
+                <div class="producto">
+                    <img src="https://img.kwcdn.com/product/fancy/f640d103-4b04-430c-92c6-02ed09d2a7b5.jpg" alt="Auriculares Estéreo Oscuro">
+                    <h3><strong>Auriculares Estéreo Oscuro</strong></h3>
+                    <p class="precio-valor">Precio Final: $10.00</p>
+                    <button>Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="https://img.kwcdn.com/product/fancy/5b17e6dd-39b9-4a38-a165-31b051f9ed8c.jpg" alt="Auriculares Estéreo Rosa">
+                    <h3><strong>Auriculares Estéreo Rosa</strong></h3>
+                    <p class="precio-valor">Precio Final: $10.99</p>
+                    <button>Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="https://img.kwcdn.com/product/fancy/2d668b95-1853-4ef6-9283-e2429eeab1a3.jpg" alt="Auriculares Estéreo Azul">
+                    <h3><strong>Auriculares Estéreo Azul</strong></h3>
+                    <p class="precio-valor">Precio Final: $9.50</p>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="carrito">
+            <h2>Carrito de Compras</h2>
+            <div id="carrito-items"></div>
+            <p id="total">Total: $0.00</p>
+
+            <label for="banco-select">Elige tu banco:</label>
+            <select id="banco-select">
+                <option value="">Selecciona un banco</option>
+                <option value="https://www.pichincha.com/banca-web">Banco Pichincha</option>
+                <option value="https://bancavirtual.bancoguayaquil.com/BMultiPersonas/indexAlternativoP.html">Banco Guayaquil</option>
+                <option value="https://www.produbanco.com/produnet/">Produbanco</option>
+            </select>
+
+            <button id="checkout">Proceder al Pago</button>
+            <button id="clear-cart">Limpiar Carrito</button>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form id="contact-form" onsubmit="enviarMensaje(event)">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" required placeholder="Ingresa tu nombre">
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" required placeholder="Ingresa tu correo electrónico">
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" required placeholder="Escribe tu mensaje"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <p class="whatsapp-info">Contáctanos por WhatsApp: 
+                <a href="https://wa.me/593959759124?text=Estoy%20interesado%20en%20contactarles" id="whatsapp-link" target="_blank">Envíanos un mensaje</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 COMPRAS EN OFERTA. Todos los derechos reservados.</p>
+        <p>Opciones de pago: 
+            <a href="https://www.pichincha.com/banca-web" target="_blank">Banco Pichincha</a>, 
+            <a href="https://bancavirtual.bancoguayaquil.com/BMultiPersonas/indexAlternativoP.html" target="_blank">Banco Guayaquil</a>, 
+            <a href="https://www.produbanco.com/produnet/" target="_blank">Produbanco</a>
+        </p>
+    </footer>
+
+    <script>
+        function enviarMensaje(event) {
+            event.preventDefault(); // Evita que se recargue la página
+
+            const nombre = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('message').value;
+
+            const mensajeWhatsApp = `Nombre: ${nombre}\nCorreo: ${email}\nMensaje: ${mensaje}`;
+            const enlaceWhatsApp = `https://wa.me/593959759124?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+            window.open(enlaceWhatsApp, '_blank'); // Abre WhatsApp con el mensaje
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
